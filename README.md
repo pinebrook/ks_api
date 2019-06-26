@@ -1,5 +1,5 @@
-# SpaceK  
-##### SpaceK backend project in KOA
+# KaleidoSpace  
+##### KaleidoSpace api backend project in KOA
 
 ### install
 before start or build, run

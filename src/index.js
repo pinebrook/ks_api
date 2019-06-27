@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import createApp from './app/app';
 
 const app = createApp();

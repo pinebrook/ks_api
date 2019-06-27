@@ -1,7 +1,8 @@
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import cors from 'koa-cors';
-import jwt from "koa-jwt";
+import health from 'koa-ping';
+import jwt from 'koa-jwt';
 
 import { connectDB } from './mongo';
 import passport from "./utils/auth/passport";
@@ -15,6 +16,7 @@ const createApp = () => {
     app.use(cors());
 
     app.use(bodyParser());
+    app.use(health());
     app.use(passport.initialize());
     app.use(authRoutes);
     app.use(jwt({ secret: "secret", debug: true }).unless({ path: [/^\/api\/pub/] }));

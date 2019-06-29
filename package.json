@@ -1,12 +1,14 @@
 {
-  "name": "spacek_backend",
+  "name": "kaleidospace_api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:source": "nodemon src/index.js --exec babel-node",
-    "dev:bundle": "npm run build:dev && nodemon start ./dist/app.bundle.js",
-    "build:dev": "rm -rf dist && webpack --config webpack.config.dev.js"
+    "dev:source": "MODE=dev nodemon src/index.js --exec babel-node",
+    "dev:bundle": "npm run build:dev && MODE=dev nodemon start ./dist/app.bundle.js",
+    "start": "npm run build:prod && MODE=prod nodemon start ./dist/app.bundle.js",
+    "build:dev": "rm -rf dist && webpack --config webpack/webpack.config.dev.js",
+    "build:prod": "rm -rf dist && webpack --config webpack/webpack.config.prod.js"
   },
   "author": "pinebrook",
   "license": "ISC",

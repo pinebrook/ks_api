@@ -3,7 +3,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
-const indexFile = path.resolve(__dirname, './src/index.js');
+const indexFile = path.resolve(__dirname, '../src/index.js');
 
 module.exports = {
 	mode: 'development',
@@ -14,7 +14,7 @@ module.exports = {
 	},
 	output:  {
 		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, './dist')
+		path: path.resolve(__dirname, '../dist')
 	},
 	module: {
 		rules: [
